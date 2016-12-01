@@ -1,2 +1,2 @@
-# SparlyTree
+# SparklyTree
 A Christmas Project
