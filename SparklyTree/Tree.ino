@@ -1,8 +1,8 @@
 class Tree {
+  public:
     int width, height, nLights;
-    Light[] light;
 
-    Tree(int w, int h) {
+    Tree(int w, int h, int p) {
       width = w;
       height = h;
       nLights = 0;
@@ -12,6 +12,8 @@ class Tree {
         nLights += n--;
       }
 
-      light = new Light[nLight];
+      
     }
-}
+};
+
+
