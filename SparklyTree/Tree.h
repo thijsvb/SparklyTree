@@ -5,21 +5,11 @@
 
 class Tree {
   public:
-    int width, height, nLights;
-
-    Tree(int w, int h, int p) {
-      width = w;
-      height = h;
-      nLights = 0;
-
-      int n = w;
-      for (int l = 0; l != height; ++l) {
-        nLights += n--;
-      }
-
-
-    }
-}
+    Tree(int w, int h, int p);
+    int width, height, nLights, lightAt(int l, int n);
+    void set(int l, int n, int r, int g, int b);
+    int[3] get(int l, int n);  
+};
 
 
 
