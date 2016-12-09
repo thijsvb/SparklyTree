@@ -1,3 +1,8 @@
+#ifndef Tree_h
+#define Tree_h
+
+#include "Arduino.h"
+
 class Tree {
   public:
     int width, height, nLights;
@@ -12,8 +17,10 @@ class Tree {
         nLights += n--;
       }
 
-      
+
     }
-};
+}
 
 
+
+#endif
