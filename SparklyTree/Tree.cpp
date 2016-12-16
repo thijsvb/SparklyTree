@@ -12,6 +12,8 @@ Tree::Tree(int w, int h, int p) {
  for (int l = 0; l != height; ++l) {
    nLights += n--;
  }
+ 
+ lights = NeoPixelBus<NeoGrbFeature, Neo800KbpsMethod> strip(nLights, p);
 
  Tree::lightAt(int l, int n) {
 
