@@ -3,7 +3,7 @@
   #include <avr/power.h>
 #endif
 
-const int stripPin = 9;
+const int stripPin = 6;
 const int levels = 10;
 
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(60, stripPin, NEO_GRB + NEO_KHZ800);
@@ -15,16 +15,39 @@ void setup() {
 }
 
 void loop() {
-  for (int i=levels-1; i!=-1; --i) {
+//  for (int i=levels-1; i!=-1; --i) {
+//    for (int j=0; j!=i+1; ++j) {
+//      int r = random(205,305)%255;
+//      strip.setPixelColor(mapPixel(i,j), r, 255-r, 0);
+//      strip.show();
+//      delay(100);
+//    }
+//  }
+//
+//  clearStrip();
+
+  for (int i=0; i!=levels; ++i) {
     for (int j=0; j!=i+1; ++j) {
-      int r = random(205,305)%255;
-      strip.setPixelColor(mapPixel(i,j), r, 255-r, 0);
-      strip.show();
-      delay(100);
+      if(i%2 == 0) {
+        strip.setPixelColor(mapPixel(i,j), 255, 0, 0);
+      } else {
+        strip.setPixelColor(mapPixel(i,j), 0, 255, 0);
+      }
     }
   }
-
-  clearStrip();
+  strip.show();
+  delay(200);
+  for (int i=0; i!=levels; ++i) {
+    for (int j=0; j!=i+1; ++j) {
+      if(i%2 == 1) {
+        strip.setPixelColor(mapPixel(i,j), 255, 0, 0);
+      } else {
+        strip.setPixelColor(mapPixel(i,j), 0, 255, 0);
+      }
+    }
+  }
+  strip.show();
+  delay(200);
 }
 
 /*
